@@ -1,6 +1,6 @@
 # 基于 RGB 光源的黑白放大机设计笔记
 
-###### 【Designed By Dioxgen】[![](https://img.shields.io/badge/My Account-BiliBili-brightgreen.svg)]()![](https://img.shields.io/badge/Version-1.0-red)![](https://img.shields.io/badge/Licence-GPL-blue) 
+###### 【Designed By Dioxgen】![](https://img.shields.io/badge/Version-2.0-red)![](https://img.shields.io/badge/Licence-GNU-blue) 
 
 ## 概述：
 
