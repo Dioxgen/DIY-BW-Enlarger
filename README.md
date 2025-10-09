@@ -8,7 +8,7 @@
 
 本项目尽量兼顾**功能与成本**的平衡，确保可行性以便于复刻。按照惯例，全部资料开源处理。
 
-<img src="\Images\DSC_2828.jpg" alt="DSC_2828" style="zoom:40%;" />
+<img src="Images\DSC_2828.jpg" alt="DSC_2828" style="zoom:40%;" />
 
 ### FAQ：
 
@@ -62,7 +62,7 @@
 
 主杆由两长度 **1m**，**Φ=20mm** 的钢轴，搭配 **SCS20UU** 带锁紧的滑块制成。将轴切割后插入底座打好的孔洞中，再用法兰座进一步固定即可。
 
-<img src="\Images\DSC_2784.jpg" alt="DSC_2784" style="zoom:25%;" />
+<img src="Images\DSC_2784.jpg" alt="DSC_2784" style="zoom:25%;" />
 
 这两根钢轴若是实心的，则奇重无比。取碳钢密度为 *7850kg/m³*，则总质量（2x1m）约为 *4.9kg*，实际镀铬硬轴会更重。若选用外径 *20mm*，内径 *15mm* 钢管，这一数值可缩减至 *2.15kg*。但注意钢管的**公差**会大很多，可能导致连法兰座都无法安装，且**直线度**远低于镀铬硬轴，另外异味较重。
 
@@ -104,7 +104,7 @@
 
 普通 LED 红外辐射少、能耗低、寿命极长。然而观察光谱可知蓝光峰突出且 480nm 附近波段严重不足，CRI 通常 ≤ 80，缺乏连续光谱，不适合相纸曝光。
 
-<img src="\Images\Color Spectrum of  Common LED.jpg" style="zoom:25%;" />
+<img src="Images\Color Spectrum of  Common LED.jpg" style="zoom:25%;" />
 
 <center>普通 LED 实测光谱拍屏</center>
 
@@ -130,7 +130,7 @@
 
 最常见的 RGB 灯珠莫过于 **5050RGB** 灯珠，该灯珠的数据手册我已归档于 “Datasheet” 文件夹中。其中最重要的参数是光谱：
 
-<img src="\Images\Color Spectrum of 5050RGB.png" style="zoom:25%;" />
+<img src="Images\Color Spectrum of 5050RGB.png" style="zoom:25%;" />
 
 | 颜色 | 最小值（nm） | 典型值（nm） | 最大值（nm） |
 | ---- | ------------ | ------------ | ------------ |
@@ -152,7 +152,7 @@
 
 但是，我在[KENTMERE PHOTOGRAPHIC : VC SELECT TECHNICAL DATA](https://www.digitaltruth.com/products/kentmere_tech/Kentmere_VC_Select.pdf)中发现了该资料：
 
-<img src="\Images\响应曲线.png" alt="响应曲线" style="zoom:30%;" />
+<img src="Images\响应曲线.png" alt="响应曲线" style="zoom:30%;" />
 
 由此可见，比对刚才 RGB 光源的光谱，可以发现相纸对 RGB 的**绿光少敏感**，蓝光完全**在响应范围**内。光源的 G 通道是 520~530nm，B 通道是 460~470nm。由于相纸的响应范围到 525nm，而 G 光源的典型值是 525nm，刚好在边缘，所以 G 光源应该能激活相纸的低反差层。B 光源的 460~470nm 在相纸的响应范围内，应该能激活高反差层。
 
@@ -245,7 +245,7 @@ $$
 
 > 注意是 Z 轴滑台而非 X 轴滑台，Z 轴滑台特有的部件方便了机械设计。
 
-<img src="\Images\LWZ40-90L.jpg" alt="LWZ40-90L" style="zoom:25%;" />
+<img src="Images\LWZ40-90L.jpg" alt="LWZ40-90L" style="zoom:25%;" />
 
 <center>示意图</center>
 
@@ -263,7 +263,7 @@ $$
 >
 > D = 80mm
 
-<img src="\Images\BellowsAttachment.jpg" alt="BellowsAttachment" style="zoom:25%;" />
+<img src="Images\BellowsAttachment.jpg" alt="BellowsAttachment" style="zoom:25%;" />
 
 <center>示意图</center>
 
@@ -322,7 +322,7 @@ $$
 >
 > 建议选择较长的电源线。
 
-<img src="\Images\5V5A Adapter.jpg" style="zoom:20%;" />
+<img src="Images\5V5A Adapter.jpg" style="zoom:20%;" />
 
 ##### 2）控制器：
 
@@ -330,21 +330,21 @@ $$
 >
 > 理论上通过单片机编程，可以实现超精确曝光调整、256 级，16777216 种色光调控以及其他个性化需求。实际在曝光上设置了 0.5s、1s、2s、4s、8s、16s、32s、64s 共 8 种选择，在调光中选择了每通道（包括总亮度） 0~9 共 10 个等级，1000 （1w）种组合。
 
-<img src="\Images\Arduino Nano.jpg" alt="Arduino Nano" style="zoom:20%;" />
+<img src="Images\Arduino Nano.jpg" alt="Arduino Nano" style="zoom:20%;" />
 
 ##### 3）LCD1602A
 
 > 已在程序中启用屏幕背光自动关闭以防止杂光。应当选择黑底红字的屏幕，进一步防止杂光。
 
-<img src="\Images\LCD1602A.png" alt="LCD1602A" style="zoom:33%;" />
+<img src="Images\LCD1602A.png" alt="LCD1602A" style="zoom:33%;" />
 
 ##### 4）WS2812 64 位灯板
 
-<img src="\Images\WS2812 64.jpg" style="zoom:33%;" />
+<img src="Images\WS2812 64.jpg" style="zoom:33%;" />
 
 ##### 5）其他元件（V2.0 为双联电位器）
 
-<img src="\Images\DSC_2776.jpg" alt="DSC_2776" style="zoom:20%;" />
+<img src="Images\DSC_2776.jpg" alt="DSC_2776" style="zoom:20%;" />
 
 #### 交互：
 
@@ -354,19 +354,19 @@ $$
 
 ##### V1.0：
 
-<img src="\Images\Schematic.png" style="zoom:33%;" />
+<img src="Images\Schematic.png" style="zoom:33%;" />
 
-<img src="\Images\PCB.png" alt="PCB" style="zoom:38%;" />
+<img src="Images\PCB.png" alt="PCB" style="zoom:38%;" />
 
 > 注：V1.0 PCB 存在电位器正负极反向的问题，可在代码中选择注释相应部分适配。核心为替换`map()`中`DEADZONE_LOW`以及`DEADZONE_HIGH`的位置。
 
 ##### V2.0：
 
-![SchematicV2.0](\Images\SchematicV2.0.png)
+![SchematicV2.0](Images\SchematicV2.0.png)
 
-<img src="\Images\PCBv2.0.png" alt="PCBv2.0" style="zoom:30%;" />
+<img src="Images\PCBv2.0.png" alt="PCBv2.0" style="zoom:30%;" />
 
-<img src="\Images\DSC_2742.jpg" alt="DSC_2742" style="zoom:33%;" />
+<img src="Images\DSC_2742.jpg" alt="DSC_2742" style="zoom:33%;" />
 
 <center>实物图是 V1.0 PCB</center>
 
@@ -498,9 +498,9 @@ if (raw > DEADZONE_HIGH) return 1023;
 >
 > 纠错：④、⑦与⑦*、片夹123实际均不存在；⑤、三处M4螺丝、大角码尺寸错误；RGB应紧贴②；均光板距RGB应为20mm。LWZ40-90与镜头板靠小角码连接。
 
-<img src="\Images\图纸.jpg" alt="图纸" style="zoom:30%;" />
+<img src="Images\图纸.jpg" alt="图纸" style="zoom:30%;" />
 
-<img src="\Images\DSC_2721.jpg" alt="DSC_2721" style="zoom:33%;" />
+<img src="Images\DSC_2721.jpg" alt="DSC_2721" style="zoom:33%;" />
 
 #### 片夹：
 
@@ -526,33 +526,33 @@ if (raw > DEADZONE_HIGH) return 1023;
 
 #### 使用`PCB`文件夹中的 Gerber 文件嘉立创打样，焊接，上传代码至单片机：
 
-![DSC_2744](\Images\DSC_2744.jpg)
+![DSC_2744](Images\DSC_2744.jpg)
 
 #### 序号 1~5、 RGB 灯板、均光板的粘接：
 
 > 可以在⑥板边缘或者②板上开小孔引出灯板的三根线束（推荐前者）。
 
-![DSC_2758](\Images\DSC_2758.jpg)
+![DSC_2758](Images\DSC_2758.jpg)
 
 #### 序号 6 的粘接（这里多出的表格中未给出的木头请忽略）：
 
 > 可以看见提前安置片夹以定位。
 
-![DSC_2766](\Images\DSC_2766.jpg)
+![DSC_2766](Images\DSC_2766.jpg)
 
 #### 连接滑台：
 
 > 这里可以看见线束如何引出。
 
-![DSC_2769](\Images\DSC_2769.jpg)
+![DSC_2769](Images\DSC_2769.jpg)
 
 #### 胶水安装片夹的磁铁与玻璃片：
 
-![DSC_2782](\Images\DSC_2782.jpg)
+![DSC_2782](Images\DSC_2782.jpg)
 
 #### 连接整体：
 
-![加工](\Images\加工.jpg)
+![加工](Images\加工.jpg)
 
 > 给 M6 * 20 * 12 螺丝开孔时靠近板边缘，注意板边缘易损坏。
 
@@ -560,31 +560,31 @@ if (raw > DEADZONE_HIGH) return 1023;
 
 > 我使用了四颗 M2*8 螺丝固定。
 
-![PCB与螺丝](\Images\PCB与螺丝.jpg)
+![PCB与螺丝](Images\PCB与螺丝.jpg)
 
 <center>四角螺丝固定</center>
 
 #### 完全无误的结构如下图：
 
-<img src="\Images\正确结构.jpg" alt="正确结构" style="zoom:30%;" />
+<img src="Images\正确结构.jpg" alt="正确结构" style="zoom:30%;" />
 
-<img src="\Images\DSC_2780.jpg" alt="DSC_2780" style="zoom:33%;" />
+<img src="Images\DSC_2780.jpg" alt="DSC_2780" style="zoom:33%;" />
 
 ## 成品：
 
-<img src="\Images\DSC_2787.jpg" alt="DSC_2787" style="zoom: 33%;" />
+<img src="Images\DSC_2787.jpg" alt="DSC_2787" style="zoom: 33%;" />
 
-<img src="\Images\DSC_2788.jpg" alt="DSC_2788" style="zoom:33%;" />
+<img src="Images\DSC_2788.jpg" alt="DSC_2788" style="zoom:33%;" />
 
-<img src="\Images\DSC_2785.jpg" alt="DSC_2785" style="zoom:33%;" />
+<img src="Images\DSC_2785.jpg" alt="DSC_2785" style="zoom:33%;" />
 
-<img src="\Images\DSC_2795.jpg" alt="DSC_2795" style="zoom:33%;" />
+<img src="Images\DSC_2795.jpg" alt="DSC_2795" style="zoom:33%;" />
 
 > 颗粒对焦器是我额外设计的，成本仅 7￥，实际使用下来效果不错。
 
-<img src="\Images\DSC_2794.jpg" alt="DSC_2794" style="zoom:33%;" />
+<img src="Images\DSC_2794.jpg" alt="DSC_2794" style="zoom:33%;" />
 
-<img src="\Images\颗粒对焦器.png" alt="颗粒对焦器" style="zoom:20%;" />
+<img src="Images\颗粒对焦器.png" alt="颗粒对焦器" style="zoom:20%;" />
 
 ## 测试：
 
@@ -614,7 +614,7 @@ if (raw > DEADZONE_HIGH) return 1023;
 
 4 片 3 组天塞型结构，镀膜工艺一般，是 N 系列镜头中最轻、最小的一支。
 
-<img src="C:\Users\Dioxgen\Desktop\自制黑白放大机\Images\相纸与镜头.jpg" alt="相纸与镜头" style="zoom:10%;" />
+<img src="Images\相纸与镜头.jpg" alt="相纸与镜头" style="zoom:10%;" />
 
 <center>相纸与镜头</center>
 
@@ -642,7 +642,7 @@ T：8s
 
 镜头：EL-Nikkor 75mm 1:4 N（f/16）
 
-![样张1](\Images\样张1.jpg)
+![样张1](Images\样张1.jpg)
 
 > 曝光过度了。
 
@@ -670,7 +670,7 @@ T：2s
 
 镜头：EL-Nikkor 50mm 1:2.8 N（f/8）
 
-![样张2](\Images\样张2.jpg)
+![样张2](Images\样张2.jpg)
 
 ## 后记：
 

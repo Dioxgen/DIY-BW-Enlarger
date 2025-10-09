@@ -49,7 +49,7 @@ const int DEADZONE_HIGH = 1000;  // 高端死区阈值
 
 // 颜色查找表 (10级)
 const uint8_t colorLevels[LEVELS] = { 0, 28, 56, 85, 113, 141, 170, 198, 226, 255 };
-float ExpTimeLevels[8] = { 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000 };  // 曝光时间，单位ms
+float ExpTimeLevels[40] = {1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000, 30000, 31000, 32000, 33000, 34000, 35000, 36000, 37000, 38000, 39000, 40000};  // 曝光时间，单位ms
 
 uint8_t R_val;  // 保存在全局
 uint8_t G_val;
@@ -205,7 +205,7 @@ void Exposure() {
         if (ExposureState == EXPOSURE_ADJUST) {
           // 调整曝光时间等级
           ExpTime_level++;
-          if (ExpTime_level >= 8) {
+          if (ExpTime_level >= 40) {
             ExpTime_level = 0;
           }
           updateExposureLCD();
