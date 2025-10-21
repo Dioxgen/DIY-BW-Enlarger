@@ -678,6 +678,8 @@ T：2s
 
 ### 我们用百年前的技艺重现了70年前的老兵风貌：
 
+https://www.bilibili.com/video/BV1Tne7zaEaf
+
 <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115082272972520&bvid=BV1Tne7zaEaf&cid=31908433349&p=1" width="100%" height="580" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 ## Special Thanks:
