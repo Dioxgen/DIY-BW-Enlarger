@@ -1,6 +1,6 @@
 # 基于 RGB 光源的黑白放大机设计笔记
 
-###### 【Designed By Dioxgen】![](https://img.shields.io/badge/Version-2.0-red)![](https://img.shields.io/badge/Licence-GPL-blue) 
+###### 【Designed By Dioxgen】![](https://img.shields.io/badge/Version-2.0-red) ![](https://img.shields.io/badge/Licence-GPL-blue) 
 
 ## 概述：
 
@@ -43,12 +43,12 @@
 | 1.0    | 1.0  | 1.0  |
 | 2.0    | 2.0  | 2.0  |
 
-| 具体项目 | 版本              | 说明                               |
-| -------- | ----------------- | ---------------------------------- |
-| 片夹     | 1.0               | 多玻璃易产生牛顿环                 |
-|          | 2.0**（待完成）** | 单玻璃                             |
-| PCB      | 1.0               | 电位器正负极混乱，单联电位器不稳定 |
-|          | 2.0               | 解决V1.0问题，优化布局             |
+| 具体项目 | 版本          | 说明                               |
+| -------- | ------------- | ---------------------------------- |
+| 片夹     | 1.0           | 多玻璃易产生牛顿环                 |
+|          | 2.0（待完成） | 单玻璃                             |
+| PCB      | 1.0           | 电位器正负极混乱，单联电位器不稳定 |
+|          | 2.0           | 解决V1.0问题，优化布局             |
 
 > *（截至 2025.08）*
 
@@ -154,7 +154,7 @@
 
 <img src="Images\响应曲线.png" alt="响应曲线" style="zoom:30%;" />
 
-由此可见，比对刚才 RGB 光源的光谱，可以发现相纸对 RGB 的**绿光少敏感**，蓝光完全**在响应范围**内。光源的 G 通道是 520~530nm，B 通道是 460~470nm。由于相纸的响应范围到 525nm，而 G 光源的典型值是 525nm，刚好在边缘，所以 G 光源应该能激活相纸的低反差层。B 光源的 460~470nm 在相纸的响应范围内，应该能激活高反差层。
+由此可见，比对刚才 RGB 光源的光谱，可以发现相纸对 RGB 的**绿光少敏感**，蓝光完全**在响应范围**内。光源的 G 通道是 520-530nm，B 通道是 460-470nm。由于相纸的响应范围到 525nm，而 G 光源的典型值是 525nm，刚好在边缘，所以 G 光源应该能激活相纸的低反差层。B 光源的 460~470nm 在相纸的响应范围内，应该能激活高反差层。
 
 在标准 VC 相纸中，蓝光用于高反差，绿光用于低反差。但这里相纸的响应范围只到 525nm，且尖峰在 500nm，所以对于 G 光源的 525nm，响应可能稍弱。
 
@@ -187,7 +187,7 @@ m=\frac{v}{u}
 $$
 2）透镜公式：
 $$
-\frac{1}{f}=\frac{1}{u}+\frac{1}{v} 
+\frac{1}{f}=\frac{1}{u}+\frac{1}{v}
 $$
 3）结合两公式，可推导出：
 
@@ -328,7 +328,7 @@ $$
 
 > RGB 灯板的工作电压为 DC 5V，使用 **Arduino** 可兼顾成本与开发难度。本项目没有小体积要求，直接使用现成的 **Arduino Nano** 开发板通过排母连接主板即可。
 >
-> 理论上通过单片机编程，可以实现超精确曝光调整、256 级，16777216 种色光调控以及其他个性化需求。实际在曝光上设置了 0.5s、1s、2s、4s、8s、16s、32s、64s 共 8 种选择，在调光中选择了每通道（包括总亮度） 0~9 共 10 个等级，1000 （1w）种组合。
+> 理论上通过单片机编程，可以实现超精确曝光调整、256 级，16777216 种色光调控以及其他个性化需求。实际在调光中选择了每通道（包括总亮度） 0~9 共 10 个等级，1000 （1w）种组合。
 
 <img src="Images\Arduino Nano.jpg" alt="Arduino Nano" style="zoom:20%;" />
 
@@ -362,7 +362,7 @@ $$
 
 ##### V2.0：
 
-![SchematicV2.0](Images\SchematicV2.0.png)
+<img src="Images\SchematicV2.0.png" alt="SchematicV2.0" style="zoom:100%;" />
 
 <img src="Images\PCBv2.0.png" alt="PCBv2.0" style="zoom:30%;" />
 
@@ -397,9 +397,9 @@ $$
 
 ##### 1）调光：
 
-关于调光，我使用了代表 R、G、B 的三个 10K 电位器，将 Arduino 的 ADC 从中读取到的值从 0~1023 映射至 0~9。同时为避免在某些情况下（可能是电源不稳）电位器在极限位置时无法达到理想的 0 或 1023 值，导致颜色不纯的问题，我放弃滤波算法，通过**校准和死区处理**确保了纯净颜色。旋转电位器可以实时看见色光的变化，当且仅当**只启用 R 通道**时，屏幕背光将自动关闭，即为安全灯模式，其他情况下背光将开启。
+关于调光，我使用了代表 R、G、B 的三个 10K 电位器，将 Arduino 的 ADC 从中读取到的值从 0-1023 映射至 0-9。同时为避免在某些情况下（可能是电源不稳）电位器在极限位置时无法达到理想的 0 或 1023 值，导致颜色不纯的问题，我放弃滤波算法，通过**校准和死区处理**确保了纯净颜色。旋转电位器可以实时看见色光的变化，当且仅当**只启用 R 通道**时，屏幕背光将自动关闭，即为安全灯模式，其他情况下背光将开启。
 
-基本流程：读取 DAC （`Raw` 值），若 < 30，则返回 0；大于 1000，则返回 1023，否则映射至 0~1023。再映射（`map()`）至 0~9 获得等级数（`level` 值），随后据此查表（`colorLevels[LEVELS]`）获取对应 RGB 值（`val` 值），最后推送给 WS2812（`pixels.setPixelColor(i, pixels.Color(R_val, G_val, B_val))`）。
+基本流程：读取 DAC （`Raw` 值），若 < 30，则返回 0；大于 1000，则返回 1023，否则映射至 0-1023。再映射（`map()`）至 0-9 获得等级数（`level` 值），随后据此查表（`colorLevels[LEVELS]`）获取对应 RGB 值（`val` 值），最后推送给 WS2812（`pixels.setPixelColor(i, pixels.Color(R_val, G_val, B_val))`）。
 
 ###### 校准系统：
 
@@ -526,33 +526,33 @@ if (raw > DEADZONE_HIGH) return 1023;
 
 #### 使用`PCB`文件夹中的 Gerber 文件嘉立创打样，焊接，上传代码至单片机：
 
-![DSC_2744](Images\DSC_2744.jpg)
+<img src="Images\DSC_2744.jpg" alt="DSC_2744" style="zoom:100%;" />
 
 #### 序号 1~5、 RGB 灯板、均光板的粘接：
 
 > 可以在⑥板边缘或者②板上开小孔引出灯板的三根线束（推荐前者）。
 
-![DSC_2758](Images\DSC_2758.jpg)
+<img src="Images\DSC_2758.jpg" alt="DSC_2758" style="zoom:100%;" />
 
 #### 序号 6 的粘接（这里多出的表格中未给出的木头请忽略）：
 
 > 可以看见提前安置片夹以定位。
 
-![DSC_2766](Images\DSC_2766.jpg)
+<img src="Images\DSC_2766.jpg" alt="DSC_2766" style="zoom:100%;" />
 
 #### 连接滑台：
 
 > 这里可以看见线束如何引出。
 
-![DSC_2769](Images\DSC_2769.jpg)
+<img src="Images\DSC_2769.jpg" alt="DSC_2769" style="zoom:100%;" />
 
 #### 胶水安装片夹的磁铁与玻璃片：
 
-![DSC_2782](Images\DSC_2782.jpg)
+<img src="Images\DSC_2782.jpg" alt="DSC_2782" style="zoom:100%;" />
 
 #### 连接整体：
 
-![加工](Images\加工.jpg)
+<img src="Images\加工.jpg" alt="加工" style="zoom:100%;" />
 
 > 给 M6 * 20 * 12 螺丝开孔时靠近板边缘，注意板边缘易损坏。
 
@@ -560,7 +560,7 @@ if (raw > DEADZONE_HIGH) return 1023;
 
 > 我使用了四颗 M2*8 螺丝固定。
 
-![PCB与螺丝](Images\PCB与螺丝.jpg)
+<img src="Images\PCB与螺丝.jpg" alt="PCB与螺丝" style="zoom:100%;" />
 
 <center>四角螺丝固定</center>
 
@@ -642,7 +642,7 @@ T：8s
 
 镜头：EL-Nikkor 75mm 1:4 N（f/16）
 
-![样张1](Images\样张1.jpg)
+<img src="Images\样张1.jpg" alt="样张1" style="zoom:100%;" />
 
 > 曝光过度了。
 
@@ -670,11 +670,15 @@ T：2s
 
 镜头：EL-Nikkor 50mm 1:2.8 N（f/8）
 
-![样张2](Images\样张2.jpg)
+<img src="Images\样张2.jpg" alt="样张2" style="zoom:100%;" />
 
 ## 后记：
 
+感谢由 [T_Cz](https://space.bilibili.com/675675040) 提供的暗房。
 
+### 我们用百年前的技艺重现了70年前的老兵风貌：
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115082272972520&bvid=BV1Tne7zaEaf&cid=31908433349&p=1" width="100%" height="580" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 ## Special Thanks:
 
